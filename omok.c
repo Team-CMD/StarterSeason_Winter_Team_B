@@ -2,6 +2,7 @@
 
 void game_control(void){
     // 전체적인 게임의 흐름을 제어하는 함수
+    show_map();
 };
 
 void gotoxy(){
@@ -18,4 +19,30 @@ void move_position(){
 
 void show_map(){
     //바둑판을 보여주는 함수
+    int Row;
+	int Col;
+
+	for (Row = 0; Row < 20; Row++) {
+		for (Col = 0; Col < 20; Col++) {
+			if (Row == 0 && Col == 0)
+				printf("┌ ");
+			else if (Col == 19 && Row == 0)
+				printf("┐ ");
+			else if (Col == 0 && Row == 19)
+				printf("└ ");
+			else if (Col == 19 && Row == 19)
+				printf("┘ ");
+			else if (Col == 0)
+				printf("├ ");
+			else if (Col == 19)
+				printf("┤ ");
+			else if (Row == 0)
+				printf("┬ ");
+			else if (Row == 19)
+				printf("┴ ");
+			else
+				printf("┼ ");
+		}
+		printf("\n");
+	}
 };
