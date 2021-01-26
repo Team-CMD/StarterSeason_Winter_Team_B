@@ -27,12 +27,17 @@ ___
         - Deciding
 2. **Project Schedule**
     - our schedule
+    - 2021-01-25(Mon)
+        - first Meeting
     - 2021-01-27(Wed)
-        - H.S, H.S  < 방향 키 입력 및 오목돌 함수 >
+        - code uproad < H.S, H.S > 
+            - < 방향 키 입력 및 오목돌 함수 >
     - 2021-01-29(Fri)
-        - G.H, B.G  < 오목 승패 알고리즘 함수 >
+        - code uproad < G.H, B.G >
+            -  < 오목 승패 알고리즘 함수 >
     - 2021-01-30(Sat)
-        - S.H       < 종합 >
+        - code uproad <   S.H    >
+            - < 종합 >
     - 2021-01-31(Sun)
         - Second Meeting
             - Program execute
