@@ -24,10 +24,26 @@ ___
 ## 🎮 Extra Rule
 1. **Code Style Convention**
     - our convention
+        - Deciding
 2. **Project Schedule**
     - our schedule
+    - 2021-01-27(Wed)
+        - H.S, H.S  < 방향 키 입력 및 오목돌 함수 >
+    - 2021-01-29(Fri)
+        - G.H, B.G  < 오목 승패 알고리즘 함수 >
+    - 2021-01-30(Sat)
+        - S.H       < 종합 >
+    - 2021-01-31(Sun)
+        - Second Meeting
+            - Program execute
+            - Points to be improved
 3. **Etc..**
     - any other rules?
+        - Deciding
+4. **Function**
+    - H.S, H.S  < 방향 키 입력 및 오목돌 함수 >
+    - K.H, B.G  < 오목 승패 알고리즘 함수 >
+    - S.H       < 종합 >
 ___
 
 ## 🎨 Project Progress
