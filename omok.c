@@ -59,8 +59,6 @@ void move_position() {
 			case 32: // Space Bar = 아스키 코드
 				show_stone(x,y);
 				break;
-			case 8:
-				return;
 			default:
 				break;
 			}
