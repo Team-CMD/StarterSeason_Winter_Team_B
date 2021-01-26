@@ -10,18 +10,23 @@
         04. 오목의 승패를 구분할 수 있기
 ============================================================
 */
+
 # ifndef OMOK_H
 # define OMOK_H
 // Import Header file
+
 # include <stdio.h>
 # include <stdlib.h>
 # include <conio.h>
 # include <windows.h>
 
+#define BLACK 1
+#define WHITE 2
+
 // Custom Function Declaration
 void game_control(void);
-void gotoxy();
-void show_stone();
+void gotoxy(int x, int y);
+void show_stone(int x, int y);
 void move_position();
 void show_map();
 // etc...
