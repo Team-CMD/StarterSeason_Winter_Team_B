@@ -125,8 +125,8 @@ int Finish(int block[20][20])
 {
     int count = 0;
 
-    for (int x = 1; x < 20; x++) {              //가로검사
-        for (int y = 1; y < 20; y++) {
+    for (int x = 0; x < 20; x++) {              //가로검사
+        for (int y = 0; y < 20; y++) {
             if (block[x][y] == BLACK)
                 count++;
             else
@@ -137,8 +137,8 @@ int Finish(int block[20][20])
             }
         }
     }
-    for (int x = 1; x < 20; x++) {              
-        for (int y = 1; y < 20; y++) {
+    for (int x = 0; x < 20; x++) {              
+        for (int y = 0; y < 20; y++) {
             if (block[x][y] == WHITE)
                 count++;
             else
@@ -149,8 +149,8 @@ int Finish(int block[20][20])
             }
         }
     }
-    for (int y = 1; y < 20; y++) {              //세로검사
-        for (int x = 1; x < 20; x++) {
+    for (int y = 0; y < 20; y++) {              //세로검사
+        for (int x = 0; x < 20; x++) {
             if (block[x][y] == BLACK)
                 count++;
             else
@@ -161,8 +161,8 @@ int Finish(int block[20][20])
             }
         }
     }
-    for (int y = 1; y < 20; y++) {
-        for (int x = 1; x < 20; x++) {
+    for (int y = 0; y < 20; y++) {
+        for (int x = 0; x < 20; x++) {
             if (block[x][y] == WHITE)
                 count++;
             else
@@ -173,9 +173,9 @@ int Finish(int block[20][20])
             }
         }
     }
-    for (int x = 1; x < 16; x++)
+    for (int x = 0; x < 20; x++)
     {
-        for (int y = 1; y < 16; y++)
+        for (int y = 0; y < 20; y++)
         {
             int arr1 = x;
             int arr2 = y;
@@ -193,9 +193,9 @@ int Finish(int block[20][20])
         }
     }
 
-    for (int x = 1; x < 16; x++)
+    for (int x = 0; x <20; x++)
     {
-        for (int y = 1; y < 16; y++)
+        for (int y = 0; y <20; y++)
         {
             int arr1 = x;
             int arr2 = y;
@@ -213,9 +213,9 @@ int Finish(int block[20][20])
         }
     }
 
-    for (int x = 1; x < 16; x++)
+    for (int x = 0; x <20; x++)
     {
-        for (int y = 1; y < 16; y++)
+        for (int y = 0; y <= 20; y++)
         {
             int arr1 = x;
             int arr2 = y;
@@ -233,9 +233,9 @@ int Finish(int block[20][20])
         }
     }
 
-    for (int x = 1; x < 16; x++)
+    for (int x = 0; x <20; x++)
     {
-        for (int y = 1; y < 16; y++)
+        for (int y = 0; y <= 20; y++)
         {
             int arr1 = x;
             int arr2 = y;
