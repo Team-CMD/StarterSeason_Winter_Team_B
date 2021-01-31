@@ -34,25 +34,25 @@ int main() {
 
         printMenu();
 
-        scanf_s("%c", &input);
-        getchar();
+        scanf_s("%c", &input, sizeof(input));
+        getchar();                  //(엔터 값)버퍼 지우기
         switch (input) {
-            case '1':
-                system("cls");
-                printf("============== CMD W M P Team B  ==============\n\n");
-                printf("- spacebar를 누르면 돌을 놓을 수 있습니다..\n");
-                printf("- 검은돌 먼저 돌을 놓기 시작합니다.\n");
-                printf("- 가로, 세로, 대각선 방향으로 같은색 돌이 5개가 이어질 경우 승리하게 됩니다.\n\n");
-                break;
+        case '1':
+            system("cls");
+            printf("============== CMD W M P Team B  ==============\n\n");
+            printf("- spacebar를 누르면 돌을 놓을 수 있습니다..\n");
+            printf("- 검은돌 먼저 돌을 놓기 시작합니다.\n");
+            printf("- 가로, 세로, 대각선 방향으로 같은색 돌이 5개가 이어질 경우 승리하게 됩니다.\n\n");
+            break;
 
-            case '2':
-                system("cls");
-                game_control();
-                break;
+        case '2':
+            system("cls");
+            game_control();
+            break;
 
-            case '3':
-                game = 0;
-                break;
+        case '3':
+            game = 0;
+            break;
 
         }
 

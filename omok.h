@@ -23,14 +23,17 @@
 
 #define BLACK 1
 #define WHITE 2
+#define SIZE_ROW 20
+#define SIZE_COL 20
 
 // Custom Function Declaration
 void game_control(void);
 void gotoxy(int x, int y);
 void show_stone(int x, int y);
-void move_position(int x, int y);
+void move_position(int* x, int* y);
 void show_map();
-int Finish(int block[20][20]);
+void init();
+int Finish();
 // etc...
 
 

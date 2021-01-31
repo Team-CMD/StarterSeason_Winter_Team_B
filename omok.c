@@ -1,16 +1,16 @@
 # include "omok.h"
-
 int status = BLACK;
-int block[20][20] = { 0, };
+int block[20][20];
 
 void game_control(void) {
     // 전체적인 게임의 흐름을 제어하는 함수
     int x = 9, y = 9;   // x,y 좌표 값
+    init();
     show_map();
 
     while (1)
     {
-        move_position(x, y);
+        move_position(&x, &y);
         int stone = Finish(block);
         gotoxy(1, 23);
 
@@ -28,6 +28,14 @@ void game_control(void) {
         }
     };
 };
+void init()
+{
+    int i, j;
+    for (i = 0; i < SIZE_ROW; i++)
+        for (j = 0; j < SIZE_COL; j++)
+            block[i][j] = 0;
+    return;
+}
 
 void gotoxy(int x, int y) {
     // 화면상의 커서 위치를 파악하고 제어하는 함수
@@ -52,13 +60,13 @@ void show_stone(int x, int y) {
     }
 }
 
-void move_position(int x, int y) {
+void move_position(int* x, int* y) {
     // 사용자가 입력하는 화살표 키에 따라 좌표 x, y값을 변경하는 함수
     char loc;      // 키 입력 값
 
     while (1)
     {
-        gotoxy(x, y);
+        gotoxy(*x, *y);
         if (_kbhit())
         {
             loc = _getch();
@@ -66,19 +74,27 @@ void move_position(int x, int y) {
             switch (loc)
             {
             case 72:         //↑   = 아스키 코드
-                y--;
+                (*y)--;
+                if (*y < 0)
+                    *y = 0;
                 break;
             case 75:         // ←  = 아스키 코드
-                x--;
+                (*x)--;
+                if (*x < 0)
+                    *x = 0;
                 break;
             case 77:         // →  = 아스키 코드
-                x++;
+                (*x)++;
+                if (*x > SIZE_COL - 1)
+                    *x = SIZE_COL - 1;
                 break;
             case 80:         //↓   = 아스키 코드
-                y++;
+                (*y)++;
+                if (*y > SIZE_ROW - 1)
+                    *y = SIZE_ROW - 1;
                 break;
             case 32: // Space Bar = 아스키 코드
-                show_stone(x, y);
+                show_stone(*x, *y);
                 goto RE;
             case 8:
                 return;
@@ -87,7 +103,7 @@ void move_position(int x, int y) {
             }
         }
     }
-    RE:
+RE:
     return;
 };
 
@@ -96,8 +112,8 @@ void show_map() {
     int Row;
     int Col;
 
-    for (Row = 0; Row < 20; Row++) {
-        for (Col = 0; Col < 20; Col++) {
+    for (Row = 0; Row < SIZE_ROW; Row++) {
+        for (Col = 0; Col < SIZE_COL; Col++) {
             if (Row == 0 && Col == 0)
                 printf("┌ ");
             else if (Col == 19 && Row == 0)
@@ -121,12 +137,12 @@ void show_map() {
     }
 };
 
-int Finish(int block[20][20])
+int Finish()
 {
     int count = 0;
 
-    for (int x = 0; x < 20; x++) {              //가로검사
-        for (int y = 0; y < 20; y++) {
+    for (int x = 0; x < SIZE_ROW; x++) {              //가로검사
+        for (int y = 0; y < SIZE_COL; y++) {
             if (block[x][y] == BLACK)
                 count++;
             else
@@ -137,8 +153,8 @@ int Finish(int block[20][20])
             }
         }
     }
-    for (int x = 0; x < 20; x++) {              
-        for (int y = 0; y < 20; y++) {
+    for (int x = 0; x < SIZE_ROW; x++) {
+        for (int y = 0; y < SIZE_COL; y++) {
             if (block[x][y] == WHITE)
                 count++;
             else
@@ -149,8 +165,8 @@ int Finish(int block[20][20])
             }
         }
     }
-    for (int y = 0; y < 20; y++) {              //세로검사
-        for (int x = 0; x < 20; x++) {
+    for (int y = 0; y < SIZE_COL; y++) {              //세로검사
+        for (int x = 0; x < SIZE_ROW; x++) {
             if (block[x][y] == BLACK)
                 count++;
             else
@@ -161,8 +177,8 @@ int Finish(int block[20][20])
             }
         }
     }
-    for (int y = 0; y < 20; y++) {
-        for (int x = 0; x < 20; x++) {
+    for (int y = 0; y < SIZE_COL; y++) {
+        for (int x = 0; x < SIZE_ROW; x++) {
             if (block[x][y] == WHITE)
                 count++;
             else
@@ -173,9 +189,9 @@ int Finish(int block[20][20])
             }
         }
     }
-    for (int x = 0; x < 20; x++)
+    for (int x = 0; x < 16; x++)                    //왼쪽위에서 오른쪽아래  /의 반대
     {
-        for (int y = 0; y < 20; y++)
+        for (int y = 0; y < 16; y++)
         {
             int arr1 = x;
             int arr2 = y;
@@ -193,9 +209,9 @@ int Finish(int block[20][20])
         }
     }
 
-    for (int x = 0; x <20; x++)
+    for (int x = 0; x < 16; x++)
     {
-        for (int y = 0; y <20; y++)
+        for (int y = 0; y < 16; y++)
         {
             int arr1 = x;
             int arr2 = y;
@@ -213,9 +229,9 @@ int Finish(int block[20][20])
         }
     }
 
-    for (int x = 0; x <20; x++)
+    for (int x = 0; x < 16; x++)                        // 오른쪽 위에서 왼쪽 아래 (/)이 모양
     {
-        for (int y = 0; y <= 20; y++)
+        for (int y = 4; y < 20; y++)
         {
             int arr1 = x;
             int arr2 = y;
@@ -233,9 +249,9 @@ int Finish(int block[20][20])
         }
     }
 
-    for (int x = 0; x <20; x++)
+    for (int x = 0; x < 16; x++)
     {
-        for (int y = 0; y <= 20; y++)
+        for (int y = 4; y < 20; y++)
         {
             int arr1 = x;
             int arr2 = y;
