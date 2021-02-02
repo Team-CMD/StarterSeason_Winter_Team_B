@@ -24,11 +24,13 @@ ___
 ## 🎮 Extra Rule
 1. **Code Style Convention**
     - our convention
-        - Deciding
+        - 코드 작성 시 주석 처리
 2. **Project Schedule**
     - our schedule
     - 2021-01-25(Mon)
         - first Meeting
+            - Role distribution
+            - Dicision period of function implementation
     - 2021-01-27(Wed)
         - code uproad < H.S, H.S > 
             - < 방향 키 입력 및 오목돌 함수 >
@@ -37,18 +39,25 @@ ___
             -  < 오목 승패 알고리즘 함수 >
     - 2021-01-30(Sat)
         - code uproad <   S.H    >
-            - < 종합 >
+            -  < 종합 및 인터페이스 >
     - 2021-01-31(Sun)
         - Second Meeting
             - Program execute
             - Points to be improved
+            - Code explanation
+            - Additional work 
+    - 2021-02-05(Fri)
+        - Thrid Meeting
+            - Program execute and PPT
 3. **Etc..**
     - any other rules?
-        - Deciding
+        - 포인터에 익숙치 않은 조원이 있어 포인터 사용은 최소화 하고 전역변수로 대체
+        - 코드 작성시 주석 처리
+        - 기능 구현 기간 엄수
 4. **Function**
     - H.S, H.S  < 방향 키 입력 및 오목돌 함수 >
     - K.H, B.G  < 오목 승패 알고리즘 함수 >
-    - S.H       < 종합 >
+    - S.H       < 종합 및 인터페이스 >
 ___
 
 ## 🎨 Project Progress
