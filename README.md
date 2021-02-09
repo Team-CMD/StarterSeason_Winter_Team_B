@@ -1,9 +1,6 @@
-# StarterSeason Winter Mini PTJ_B
-
+# StarterSeason Winter Mini PTJ_B  
+## `This Project is Finished!`
 ___  
-# `This Project is Finished!`
-___  
-
 ## 🎲 **프로젝트 개요**
 1. **프로젝트 목표 ▼**  
 
@@ -45,7 +42,7 @@ ___
         - code uproad <   S.H    >
             -  < 종합 및 인터페이스 >
     - 2021-01-31(Sun)
-        - Second Meeting
+        - Second Meeting 
             - Program execute
             - Points to be improved
             - Code explanation
