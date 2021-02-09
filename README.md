@@ -1,9 +1,7 @@
 # StarterSeason Winter Mini PTJ_B
 
 ___  
-
-<div style="align: center;">This Project is Finished</div>  
-
+# `This Project is Finished!`
 ___  
 
 ## 🎲 **프로젝트 개요**
